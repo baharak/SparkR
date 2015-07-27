@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Apply a function to all elements</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for map,DataFrame,function-method {SparkR}"><tr><td>map,DataFrame,function-method {SparkR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Apply a function to all elements</h2>
+
+<h3>Description</h3>
+
+<p>This function creates a new RDD by applying the given transformation to all
+elements of the given RDD
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'DataFrame,'function''
+map(X, FUN)
+
+## S4 method for signature 'RDD,'function''
+map(X, FUN)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>X</code></td>
+<td>
+<p>The RDD to apply the transformation.</p>
+</td></tr>
+<tr valign="top"><td><code>FUN</code></td>
+<td>
+<p>the transformation to apply on each element</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a new RDD created by the transformation.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">## Not run: 
+##D sc &lt;- sparkR.init()
+##D rdd &lt;- parallelize(sc, 1:10)
+##D multiplyByTwo &lt;- lapply(rdd, function(x) { x * 2 })
+##D collect(multiplyByTwo) # 2,4,6...
+## End(Not run)
+</code></pre>
+
+
+<hr /><div style="text-align: center;">[Package <em>SparkR</em> version 1.4.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
